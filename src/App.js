@@ -23,14 +23,13 @@ function App() {
     date.setHours(date.getHours() + hoursUserTimezone);
     date.setMinutes(date.getMinutes() + minutesUserTimezone);
 
-    const hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours()
-    const minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes()
-    const seconds = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds()
+    const h = date.getHours();
+    const m = date.getMinutes();
+    const s = date.getSeconds();
 
-    const result = hours + ':' + minutes + ':' + seconds
+    const result = [h, m, s]
     console.log(result)
     return result
-
   }
 
   // useEffect(() => {
