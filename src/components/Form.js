@@ -3,7 +3,7 @@ import { useState } from "react";
 
 
 export default function Form({ addNewClock }) {
-	const initialFormState = { id: null, name: "", timeZone: "" };
+	const initialFormState = { id: null, name: "", timeZone: "", time: "" };
 	const [clock, setClock] = useState(initialFormState);
 
 	const handleInputChange = (event) => {

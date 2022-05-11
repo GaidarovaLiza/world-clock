@@ -1,20 +1,24 @@
-import react from 'react'
+import react, { useState, useEffect } from 'react'
 import { ReactPropTypes } from 'react'
+import { getTime } from '../utils'
 
 export default function Clock({ deleteClock, name, id, timeZone }) {
+  const [time, setTime] = useState(getTime(timeZone))
+
+  useEffect(() => {
+    setInterval(() => {
+      setTime(getTime(timeZone))
+    }, 1000)
+  }, [])
 
   return (
     <div className='clock-wrapper'>
-      <div key={id} className="workout-list-row">
-        <span>{name}</span>
-        <span>{timeZone}</span>
-        <div>
-          <p className="button-delete"
-            onClick={() => deleteClock(id)} >
-            ✘
-          </p>
-        </div>
-      </div>
+      <p className='items'>{name} :</p>
+      <p className='items'>{`${time[0]}:${time[1]}:${time[2]}`}</p>
+      <p className="button-delete"
+        onClick={() => deleteClock(id)} >
+        ✘
+      </p>
     </div>
   )
 }

@@ -33,8 +33,19 @@ input {
 
 .clock-wrapper {
   margin-top: 50px;
+  display: flex;
+
 }
 
 .no-clocks {
   opacity: 0.6
+}
+
+.items {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.button-delete{
+  cursor: pointer;
 }
